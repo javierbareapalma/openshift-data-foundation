@@ -5,7 +5,7 @@
 
 lso:
 # LSO version Channel
-  channel: '4.11'
+  channel: '4.10'
 # Number of discovered devices to use per node
   devicecount: 4
 # Type of device to use, ignore Rotational Disks
