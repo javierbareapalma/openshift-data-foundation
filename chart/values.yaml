@@ -90,8 +90,9 @@ mcg:
   enabled: true
 
 # Deploy CephTools with ODF
+# Currently this is broke #Paul Peereboom
 cephtools:
-  enabled: true
+  enabled: false
 
 # If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers(m5.4xlarge) using machinesets one per AZ, .
 dedicated: 
