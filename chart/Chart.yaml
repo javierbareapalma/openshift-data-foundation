@@ -1,5 +1,5 @@
 apiVersion: v2
-name: odf-argocd
+name: openshift-data-foundation
 description: A Helm chart to deploy LSO & ODF resources for Kubernetes
 type: application
 
