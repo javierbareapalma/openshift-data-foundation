@@ -76,7 +76,7 @@ odf:
 
 ### RGW section Only relevant if deploying in AWS
 # If RGW enabled, RGW object store will be deployed in AWS
-rgw: 
+rgw:
   enabled: true
 # Enable S3 RGW endpoint with SSL
   ssl: true
@@ -92,10 +92,10 @@ mcg:
 # Deploy CephTools with ODF
 # Currently this is broke #Paul Peereboom
 cephtools:
-  enabled: false
+  enabled: true
 
 # If OCP Cluster is deployed in AWS and dedicated option enabled it will deploy 3 ODF workers(m5.4xlarge) using machinesets one per AZ, .
-dedicated: 
+dedicated:
   enabled: false
   aws:
     #you can use $ oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}'
