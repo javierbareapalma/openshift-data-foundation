@@ -61,7 +61,7 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: pod-viewer-bind
+  name: patch-odf-console
   annotations:
     argocd.argoproj.io/sync-wave: "-2"
 subjects:
