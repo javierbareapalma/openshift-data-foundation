@@ -53,7 +53,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-2"
 rules:
-- apiGroups: ["operator.openshift.io/v1"] # core API group
+- apiGroups: ["operator.openshift.io"] # core API group
   resources: ["consoles"]
   verbs: ["patch"]
 
@@ -90,7 +90,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-2"
 rules:
-- apiGroups: ["storage.k8s.io/v1"] # core API group
+- apiGroups: ["storage.k8s.io"] # core API group
   resources: ["storageclasses"]
   verbs: ["patch"]
 
