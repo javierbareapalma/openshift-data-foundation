@@ -73,3 +73,39 @@ roleRef:
   kind: ClusterRole
   name: patch-odf-console
 ---
+
+# Storageclass patcher for ODF
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: patch-odf-sc
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: patch-odf-sc
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
+rules:
+- apiGroups: ["storage.k8s.io/v1"] # core API group
+  resources: ["storageclasses"]
+  verbs: ["patch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: patch-odf-sc
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
+subjects:
+  - kind: ServiceAccount
+    name: patch-odf-sc
+    namespace: openshift-storage
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: patch-odf-sc

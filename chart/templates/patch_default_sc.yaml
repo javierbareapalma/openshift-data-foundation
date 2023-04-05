@@ -15,15 +15,15 @@ spec:
             - /bin/bash
             - -c
             - |
-              echo "Patching the console to enable ODF console plugin"
-              oc patch consoles.operator.openshift.io cluster --patch '{ "spec": { "plugins": ["odf-console"] } }' --type=merge
+              echo "Patching the storaclass to make it default SC"
+              oc patch storageclass ocs-storagecluster-ceph-rbd --patch '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}' --type merge
               if [ $? = 0 ]
               then
-                  echo "ODF console enabled, patch was applied ok"
+                  echo "Patching SC succeeded"
               else
-                  echo "Failed to patch console"
+                  echo "Failed to patch storageclass"
               fi
         image: registry.redhat.io/openshift4/ose-cli:v4.11
-      serviceAccount: patch-odf-console
-      serviceAccountName: patch-odf-console
+      serviceAccount: patch-odf-sc
+      serviceAccountName: patch-odf-sc
       restartPolicy: Never
