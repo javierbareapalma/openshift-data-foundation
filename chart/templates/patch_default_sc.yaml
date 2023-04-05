@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: enable-odf-plugin
+  name: set-odf-default-sc
   annotations:
     argocd.argoproj.io/sync-wave: "5"
     compare-options: IgnoreExtraneous
@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       containers:
-      - name: enable-odf-plugin
+      - name: set-odf-default-sc
         command:
             - /bin/bash
             - -c
