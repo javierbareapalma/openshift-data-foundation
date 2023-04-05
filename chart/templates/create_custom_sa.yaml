@@ -55,7 +55,7 @@ metadata:
 rules:
 - apiGroups: ["operator.openshift.io"] # core API group
   resources: ["consoles"]
-  verbs: ["patch"]
+  verbs: ["get","patch"]
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -92,7 +92,7 @@ metadata:
 rules:
 - apiGroups: ["storage.k8s.io"] # core API group
   resources: ["storageclasses"]
-  verbs: ["patch"]
+  verbs: ["get","patch"]
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
