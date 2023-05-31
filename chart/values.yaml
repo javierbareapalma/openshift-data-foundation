@@ -3,6 +3,7 @@
 ##
 #
 
+
 lso:
 # LSO version Channel
   channel: 'stable'
@@ -10,6 +11,8 @@ lso:
   devicecount: 4
 # Type of device to use, ignore Rotational Disks
   type: NonRotational
+  minSize: 5Ti
+  maxSize: 9Ti
 
 
 ##
@@ -110,8 +113,12 @@ dedicated:
 
 # Configure StorageCluster
 osds:
-# Number of OSDs that will be deployed, if replica is set to 3 by defau,t, setting 1 here equals to 3 OSDs, 2 = 6 OSDs, etc.
-# If replica is set to 1 , setting 1 in devicesetcount will get you 1 OSD.
+# Number of OSDs that will be deployed in TOTAL.
+# Being replica to 3 (default), this value "devicesetcount" represents TOTAL number of OSDs in ODF storage solution.
+# this value 1 here equals to  3= 1x3 OSDs, 
+# this value 2 here equals to  6= 2x3 OSDs,
+# this value 3 here equals to  9= 3x3 OSDs,
+# this value 4 here equals to 12= 4x3 OSDs,
   devicesetcount: 4
 #Enable cluster OSD encryption
   encryption:
