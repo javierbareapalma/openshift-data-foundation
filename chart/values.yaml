@@ -3,7 +3,6 @@
 ##
 #
 
-
 lso:
 # LSO version Channel
   channel: 'stable'
@@ -11,15 +10,16 @@ lso:
   devicecount: 4
 # Type of device to use, ignore Rotational Disks
   type: NonRotational
+# minSize and maxSize of discovered devices to use
   minSize: 5Ti
   maxSize: 9Ti
+
 
 
 ##
 # ODF Chart Values File.
 ##
 #
-
 
 ## If MCG multi cloud gateways stand alone is enabled, only MCG will be
 #deployed no ODF/Rook/Ceph components will get installed.
@@ -76,7 +76,6 @@ odf:
       memory: 4Gi
 
 
-
 ### RGW section Only relevant if deploying in AWS
 # If RGW enabled, RGW object store will be deployed in AWS
 rgw:
@@ -129,3 +128,17 @@ osds:
   scname: 'localblock'
 #Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '7T'
+
+
+
+##
+# OADP Chart values
+##
+#
+oadp:
+# OADP version Channel
+  channel: 'stable-1.1'
+volsync:
+# Volsync-Product version Channel
+  channel: 'stable'
+
