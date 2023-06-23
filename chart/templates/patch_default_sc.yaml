@@ -15,14 +15,18 @@ spec:
             - /bin/bash
             - -c
             - |
+              while true; do
               echo "Patching the storaclass to make it default SC"
               oc patch storageclass ocs-storagecluster-ceph-rbd --patch '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}' --type merge
               if [ $? = 0 ]
               then
                   echo "Patching SC succeeded"
+                  break
               else
-                  echo "Failed to patch storageclass"
+                  echo "Failed to patch storageclass. Retrying..."
+                  sleep 10
               fi
+              done
         image: registry.redhat.io/openshift4/ose-cli:v4.11
       serviceAccount: patch-odf-sc
       serviceAccountName: patch-odf-sc
