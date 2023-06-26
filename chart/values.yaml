@@ -118,7 +118,7 @@ osds:
 # this value 2 here equals to  6= 2x3 OSDs,
 # this value 3 here equals to  9= 3x3 OSDs,
 # this value 4 here equals to 12= 4x3 OSDs,
-  devicesetcount: 4
+  devicesetcount: 2
 #Enable cluster OSD encryption
   encryption:
     enabled: false
