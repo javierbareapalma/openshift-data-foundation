@@ -67,7 +67,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: patch-odf-console
-    namespace: openshift-data-foundation
+    namespace: openshift-storage
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -104,7 +104,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: patch-odf-sc
-    namespace: openshift-data-foundation
+    namespace: openshift-storage
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
