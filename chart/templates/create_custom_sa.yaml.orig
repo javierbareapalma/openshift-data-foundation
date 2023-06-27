@@ -58,7 +58,6 @@ rules:
 - apiGroups: ["operator.openshift.io"] # core API group
   resources: ["consoles"]
   verbs: ["get","patch"]
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -96,7 +95,6 @@ rules:
 - apiGroups: ["storage.k8s.io"] # core API group
   resources: ["storageclasses"]
   verbs: ["get","patch"]
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
