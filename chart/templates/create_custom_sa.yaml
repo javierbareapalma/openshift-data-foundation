@@ -4,6 +4,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: query-pods
+  namespace: openshift-storage
   annotations:
     argocd.argoproj.io/sync-wave: "-2"
 ---
@@ -81,6 +82,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: patch-odf-sc
+  namespace: openshift-storage
   annotations:
     argocd.argoproj.io/sync-wave: "-2"
 ---
