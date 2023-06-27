@@ -6,8 +6,8 @@
 lso:
 # LSO version Channel
   channel: 'stable'
-# Number of discovered devices to use per node
-  devicecount: 4
+# Number of discovered devices to use per ODF node member
+  devicecount: 2
 # Type of device to use, ignore Rotational Disks
   type: NonRotational
 # minSize and maxSize of discovered devices to use
@@ -60,12 +60,13 @@ odf:
       cpu: 1
       memory: 2Gi
     disk: 50Gi
+  # OSD default pods values are cpu=2 and memory=5Gi
   osd:
     requests:
-      cpu: 2
+      cpu: 4
       memory: 5Gi
     limits:
-      cpu: 3
+      cpu: 4
       memory: 7Gi
   rgw:
     requests:
@@ -112,13 +113,14 @@ dedicated:
 
 # Configure StorageCluster
 osds:
-# Number of OSDs that will be deployed in TOTAL.
-# Being replica to 3 (default), this value "devicesetcount" represents TOTAL number of OSDs in ODF storage solution.
-# this value 1 here equals to  3= 1x3 OSDs, 
-# this value 2 here equals to  6= 2x3 OSDs,
-# this value 3 here equals to  9= 3x3 OSDs,
-# this value 4 here equals to 12= 4x3 OSDs,
+# Being replica groups to 3 (default), this value "devicesetcount" will be multiplied by that 3 to obtain the number of OSDs that will be deployed in TOTAL in ODF storage solution.
+# So, if devicesetcount is 1 here, the total of OSDs to be deployed equals to  3= 1x3 OSDs, 
+# So, if devicesetcount is 2 here, the total of OSDs to be deployed equals to  6= 2x3 OSDs,
+# So, if devicesetcount is 3 here, the total of OSDs to be deployed equals to  9= 3x3 OSDs,
+# So, if devicesetcount is 4 here, the total of OSDs to be deployed equals to 12= 4x3 OSDs,
+# and so on
   devicesetcount: 2
+
 #Enable cluster OSD encryption
   encryption:
     enabled: false
@@ -137,7 +139,7 @@ osds:
 #
 oadp:
 # OADP version Channel
-  channel: 'stable-1.1'
+  channel: 'stable-1.2'
 volsync:
 # Volsync-Product version Channel
   channel: 'stable'
