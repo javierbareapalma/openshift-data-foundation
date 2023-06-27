@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "5"
     compare-options: IgnoreExtraneous
-  namespace: openshift-data-foundation
+  namespace: openshift-storage
 spec:
   template:
     spec:
