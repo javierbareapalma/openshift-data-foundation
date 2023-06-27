@@ -57,8 +57,8 @@ spec:
         memory: {{ .Values.odf.mgr.requests.memory }} 
     osd:
       requests:
-        cpu: {{ default "2" .Values.odf.osd.requests.cpu }}
-        memory: {{ default "5" .Values.odf.osd.requests.memory }}
+        cpu: {{ .Values.odf.osd.requests.cpu | default "2" }}
+        memory: {{ .Values.odf.osd.requests.memory | default "5" }}
     noobaa-core:
       requests:
         cpu: '{{ .Values.odf.noobaacore.requests.cpu }}'
