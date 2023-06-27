@@ -113,7 +113,7 @@ dedicated:
 
 # Configure StorageCluster
 osds:
-# Being replica groups to 3 (default), this value "devicesetcount" will be multiplied by that 3 to obtain the number of OSDs that will be deployed in TOTAL in ODF storage solution.
+# This value "devicesetcount" will be multiplied by 3 (being replica by default 3), to obtain the number of OSDs that will be deployed in TOTAL in ODF storage solution.
 # So, if devicesetcount is 1 here, the total of OSDs to be deployed equals to  3= 1x3 OSDs, 
 # So, if devicesetcount is 2 here, the total of OSDs to be deployed equals to  6= 2x3 OSDs,
 # So, if devicesetcount is 3 here, the total of OSDs to be deployed equals to  9= 3x3 OSDs,
