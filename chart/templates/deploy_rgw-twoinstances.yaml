@@ -4,7 +4,7 @@
 apiVersion: ceph.rook.io/v1
 kind: CephObjectStore
 metadata:
-  name: ocs-cephobjectstore
+  name: ocs-cephobjectstore-twoinstances
   namespace: openshift-storage
   annotations:
     argocd.argoproj.io/sync-wave: "3"
