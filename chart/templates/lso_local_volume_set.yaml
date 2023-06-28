@@ -22,3 +22,5 @@ spec:
     - disk
     deviceMechanicalProperties:
     - {{ .Values.lso.type }}
+    minSize: {{ .Values.lso.minSize }}
+    maxSize: {{ .Values.lso.maxSize }}

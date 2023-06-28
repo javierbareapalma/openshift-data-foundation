@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: wait-pod-odfoperator-job
+  namespace: openshift-storage
   annotations:
     argocd.argoproj.io/sync-wave: "0"
     compare-options: IgnoreExtraneous

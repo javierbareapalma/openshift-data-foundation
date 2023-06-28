@@ -4,7 +4,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: ocs-ceph-rgw
+  name: ocs-ceph-rgw-sc
   annotations:
     description: Provides Object Bucket Claims (OBCs) using the RGW
     argocd.argoproj.io/sync-wave: "4"
