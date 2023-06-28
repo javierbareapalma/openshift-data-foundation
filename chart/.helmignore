@@ -15,4 +15,7 @@
 *.bak
 *.tmp
 *.orig
-
+# JB dir_temporal-aux
+dir_temporal-aux/
+chart/dir_temporal-aux/
+chart/templates/dir_temporal-aux/

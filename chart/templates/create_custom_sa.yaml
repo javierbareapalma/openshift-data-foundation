@@ -3,8 +3,6 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  labels:
-    argocd.argoproj.io/managed-by: openshift-gitops
   name: query-pods
   namespace: openshift-storage
   annotations:
@@ -46,8 +44,6 @@ roleRef:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  labels:
-    argocd.argoproj.io/managed-by: openshift-gitops
   name: patch-odf-console
   namespace: openshift-storage
   annotations:
@@ -86,8 +82,6 @@ roleRef:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  labels:
-    argocd.argoproj.io/managed-by: openshift-gitops
   name: patch-odf-sc
   namespace: openshift-storage
   annotations:

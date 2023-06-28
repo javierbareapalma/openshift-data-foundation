@@ -7,7 +7,7 @@ lso:
 # LSO version Channel
   channel: 'stable'
 # Number of discovered devices to use per ODF node member
-  devicecount: 2
+  devicecount: 4
 # Type of device to use, ignore Rotational Disks
   type: NonRotational
 # minSize and maxSize of discovered devices to use
@@ -119,7 +119,7 @@ osds:
 # So, if devicesetcount is 3 here, the total of OSDs to be deployed equals to  9= 3x3 OSDs,
 # So, if devicesetcount is 4 here, the total of OSDs to be deployed equals to 12= 4x3 OSDs,
 # and so on
-  devicesetcount: 2
+  devicesetcount: 4
 
 #Enable cluster OSD encryption
   encryption:
@@ -130,17 +130,3 @@ osds:
   scname: 'localblock'
 #Size of Each PV that will be provisioned to be used by the OSDs.
   disksize: '7T'
-
-
-
-##
-# OADP Chart values
-##
-#
-oadp:
-# OADP version Channel
-  channel: 'stable-1.2'
-volsync:
-# Volsync-Product version Channel
-  channel: 'stable'
-
