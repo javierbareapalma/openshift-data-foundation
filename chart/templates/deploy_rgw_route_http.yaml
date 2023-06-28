@@ -4,7 +4,7 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: s3-rgw
+  name: s3-rgw-http
   namespace: openshift-storage
   labels:
     app: rook-ceph-rgw
