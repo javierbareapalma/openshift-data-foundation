@@ -1,6 +1,0 @@
-variables:
-  COMPONENT_NAME: openshift-data-foundation
-
-include:
-  - project: quattro/components/shared-pipeline
-    file: pipeline.yaml
